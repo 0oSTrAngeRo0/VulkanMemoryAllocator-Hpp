@@ -25,7 +25,7 @@ target_include_directories(VulkanMemoryAllocator-Hpp
 target_link_libraries(VulkanMemoryAllocator-Hpp
     INTERFACE
         Vulkan::Vulkan
-        VulkanMemoryAllocator::VulkanMemoryAllocator
+        GPUOpen::VulkanMemoryAllocator
 )
 
 install(
@@ -44,16 +44,4 @@ install(
         ${CMAKE_CURRENT_SOURCE_DIR}/cmake/VulkanMemoryAllocator-HppConfig.cmake
     DESTINATION
         lib/cmake/VulkanMemoryAllocator-Hpp
-)
-
-install(
-    TARGETS VulkanMemoryAllocator-Hpp
-    EXPORT VulkanMemoryAllocator-HppTargets
-)
-
-install(
-    EXPORT VulkanMemoryAllocator-HppTargets
-    FILE VulkanMemoryAllocator-HppTargets.cmake
-    NAMESPACE VulkanMemoryAllocator-Hpp::
-    DESTINATION lib/cmake/VulkanMemoryAllocator-Hpp
 )
